@@ -1,0 +1,31 @@
+﻿@model WebAPIGameTable.Models.Game
+
+<h2>Delete Game</h2>
+@using (Html.BeginForm("games/" + Model.GameId, "api", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.GameId)
+
+    <div class="form-group">
+        <label>Name</label>
+        <p>@Model.Name</p>
+    </div>
+
+    <div class="form-group">
+        <label>ReleaseYear</label>
+        <p>@Model.ReleaseYear</p>
+    </div>
+
+    <div class="form-group">
+        <label>GenreId</label>
+        <p>@Model.GenreId</p>
+    </div>
+
+    <div class="form-group">
+        <label>RatingId</label>
+        <p>@Model.RatingId</p>
+    </div>
+
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+}

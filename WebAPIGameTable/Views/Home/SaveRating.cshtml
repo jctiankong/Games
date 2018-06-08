@@ -1,0 +1,25 @@
+﻿@model WebAPIGameTable.Models.Rating
+
+
+<h2>Save</h2>
+@using (Html.BeginForm(Model == null ? "ratings" : "ratings/" + Model.RatingId, "api", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.RatingId > 0)
+    {
+        @Html.HiddenFor(a => a.RatingId)
+    }
+
+    <div class="form-group">
+        <label>Rating Value</label>
+        @Html.TextBoxFor(a => a.RatingValue, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.RatingValue)
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        @Html.TextBoxFor(a => a.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Description)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
