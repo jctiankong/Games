@@ -6,6 +6,7 @@
     <title>Rating</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
     <style>
         span.field-validation-error {
@@ -15,14 +16,14 @@
 </head>
 <body>
     <div style="width:90%; margin:0 auto" class="tablecontainer">
-        <a class="popup btn btn-primary" href="/home/SaveRating/0" style="margin-bottom:20px; margin-top:20px;">Add New Game</a>
+        <a class="popup btn btn-success" href="/home/SaveRating/0" style="margin-bottom:20px; margin-top:20px;"><i class="fa fa-plus "></i> Add New Rating</a>
         <table id="myDatatable">
             <thead>
                 <tr>
                     <th>Rating Value</th>
                     <th>Description</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
         </table>
@@ -46,12 +47,12 @@
                     { "data": "Description", "autoWidth": true },
                     {
                         "data": "RatingId", "width": "50px", "render": function (data) {
-                            return '<a class="popup" href="/home/SaveRating/' + data + '">Edit</a>';
+                            return '<a class="popup btn btn-default btn-sm" href="/home/SaveRating/' + data + '"><i class="	fa fa-edit"></i> Edit</a>';
                         }
                     },
                     {
                         "data": "RatingId", "width": "50px", "render": function (data) {
-                            return '<a class="popup" href="/home/DeleteRating/' + data + '">Delete</a>';
+                            return '<a class="popup btn btn-danger btn-sm" href="/home/DeleteRating/' + data + '"><i class="fa fa-trash"></i> Delete</a>';
                         }
                     }
                 ]

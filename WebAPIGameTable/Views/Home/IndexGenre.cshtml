@@ -6,6 +6,7 @@
     <title>Genre</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
     <style>
         span.field-validation-error {
@@ -15,17 +16,17 @@
 </head>
 <body>
     <div style="width:90%; margin:0 auto" class="tablecontainer">
-        <a class="popup btn btn-primary" href="/home/SaveGenre/0" style="margin-bottom:20px; margin-top:20px;">Add New Game</a>
-        <table id="myDatatable">
-            <thead>
-                <tr>
-                    <th>Genre Name</th>
-                    <th>Description</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-        </table>
+        <a class="popup btn btn-success" href="/home/SaveGenre/0" style="margin-bottom:20px; margin-top:20px;"><i class="fa fa-plus "></i> Add New Genre</a>
+            <table id="myDatatable">
+                <thead>
+                    <tr>
+                        <th>Genre Name</th>
+                        <th>Description</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
     </div>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
@@ -46,12 +47,12 @@
                     { "data": "Description", "autoWidth": true },
                     {
                         "data": "GenreId", "width": "50px", "render": function (data) {
-                            return '<a class="popup" href="/home/SaveGenre/' + data + '">Edit</a>';
+                            return '<a class="popup btn btn-default btn-sm" href="/home/SaveGenre/' + data + '"><i class="	fa fa-edit"></i> Edit</a>';
                         }
                     },
                     {
                         "data": "GenreId", "width": "50px", "render": function (data) {
-                            return '<a class="popup" href="/home/DeleteGenre/' + data + '">Delete</a>';
+                            return '<a class="popup btn btn-danger btn-sm" href="/home/DeleteGenre/' + data + '"><i class="fa fa-trash"></i> Delete</a>';
                         }
                     }
                 ]

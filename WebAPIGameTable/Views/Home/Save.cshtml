@@ -15,22 +15,26 @@
     </div>
     <div class="form-group">
         <label>ReleaseYear</label>
-        @Html.TextBoxFor(a => a.ReleaseYear, new { @class = "form-control" })
+        @*<div class="input-group">
+            <span class="input-group-addon">$</span>*@
+            @Html.TextBoxFor(a => a.ReleaseYear, new { @class = "form-control" })
+        @*</div>*@
         @Html.ValidationMessageFor(a => a.ReleaseYear)
+
     </div>
-    <div class="form-group">
-        <label>Genre</label>
-        @Html.DropDownListFor(a => a.GenreId, (SelectList)ViewBag.GenreSelect, "Select genre...", new { @class = "form-control" })
-        @Html.ValidationMessageFor(a => a.Genre)
-    </div>
-    <div class="form-group">
-        <label>Rating</label>
-        @Html.DropDownListFor(a => a.RatingId, (SelectList)ViewBag.RatingSelect, "Select rating...", new { @class = "form-control" })
-        @Html.ValidationMessageFor(a => a.RatingId)
-    </div>
-    <div>
-        <input type="submit" value="Save" />
-    </div>
-}
+        <div class="form-group">
+            <label>Genre</label>
+            @Html.DropDownListFor(a => a.GenreId, (SelectList)ViewBag.GenreSelect, "Select genre...", new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.Genre)
+        </div>
+        <div class="form-group">
+            <label>Rating</label>
+            @Html.DropDownListFor(a => a.RatingId, (SelectList)ViewBag.RatingSelect, "Select rating...", new { @class = "form-control" })
+            @Html.ValidationMessageFor(a => a.RatingId)
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+        }
 
 
