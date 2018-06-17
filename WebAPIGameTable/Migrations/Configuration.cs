@@ -14,20 +14,18 @@ namespace WebAPIGameTable.Migrations
 
         protected override void Seed(WebAPIGameTable.Models.WebAPIGameTableContext context)
         {
-            context.Genres.AddOrUpdate(new Models.Genre[] {
-        new Models.Genre() { GenreId = 1, GenreName = "Action-adventure" , Description = "The action-adventure video game."}
-        });
+            //  This method will be called after migrating to the latest version.
 
-
-            context.Ratings.AddOrUpdate(new Models.Rating[] {
-        new Models.Rating() { RatingId = 1, RatingValue = "Rating 94%", Description = "Good" },
-        });
-
-
-            context.Games.AddOrUpdate(new Models.Game[] {
-        new Models.Game() { GameId = 1, Name = "God of War", ReleaseYear = "April 20, 2018",
-        GenreId = 1, RatingId = 1 }
-           });
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }
